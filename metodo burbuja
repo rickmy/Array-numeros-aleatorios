@@ -1,0 +1,44 @@
+var array = [];
+
+var relleno = function (numero){
+    if(array.length>=numero){
+        console.log('Array con Numeros Aleatorios: ')
+        console.log(x)
+    }else{
+        var aleatorio = Math.round(Math.random()*100);
+        array.push(aleatorio);
+        return relleno(numero);
+    }
+}
+
+relleno(100);
+
+var burbuja = function(array){
+    //recorreremos todos los elementos hasta n-1
+    for(i=0;i<(array.length-1);i++)
+    //recorreremos todos los elementos hasta n-i, tomar en cuenta los ultimos no tiene caso ya que ya estan acomodados.
+    for(j=0;j<(array.length-i);j++){
+ 
+        //comparamos
+        if(array[j]>array[j+1]){
+             //guardamos el numero mayor en el auxiliar
+             aux=array[j];
+             //guardamos el numero menor en el lugar correspondiente
+             array[j]=array[j+1];
+             //asignamos el auxiliar en el lugar correspondiente
+             array[j+1]=aux;
+ 
+        }
+ 
+    }
+ 
+    return array;
+}
+
+ 
+//llamamos la función
+var arregloAOrdenar = burbuja(array);
+ 
+//imprimimos para ver el resultado
+console.log('Array Ordenado: ');
+console.log(arregloAOrdenar);
